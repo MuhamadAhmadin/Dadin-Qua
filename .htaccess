@@ -1,0 +1,80 @@
+RewriteEngine On
+Options -Indexes
+
+RewriteRule ^403$ 403.php
+ErrorDocument 403 https://localhost/403
+
+RewriteRule ^beranda$ index.php
+RewriteRule ^airudaceh$ airudaceh.php
+
+RewriteRule ^berita$ archive_berita.php
+RewriteRule ^manage$ manage/index.php
+RewriteRule ^manage/login$ manage/index.php
+RewriteRule ^manage/logout$ manage/logout.php
+
+# ROLE SUPER ADMIN
+RewriteRule ^manage/admin/dashboard$ manage/admin/index.php
+
+RewriteRule ^manage/admin/dadinqua$ manage/admin/dadinqua.php
+RewriteRule ^manage/admin/kontak$ manage/admin/kontak.php
+
+RewriteRule ^manage/admin/kategori$ manage/admin/kategori.php
+RewriteRule ^manage/admin/kategori/add$ manage/admin/kategori_add.php
+RewriteRule ^manage/admin/kategori/edit/(.*)\/ manage/admin/kategori_edit.php?id=$1 [QSA]
+
+RewriteRule ^manage/admin/users$ manage/admin/users.php
+RewriteRule ^manage/admin/users/add$ manage/admin/users_add.php
+RewriteRule ^manage/admin/users/edit/(.*)\/ manage/admin/users_edit.php?id=$1 [QSA]
+
+RewriteRule ^manage/admin/menu$ manage/admin/menu.php
+RewriteRule ^manage/admin/menu/add$ manage/admin/menu_add.php
+RewriteRule ^manage/admin/menu/edit/(.*)\/ manage/admin/menu_edit.php?id=$1 [QSA]
+
+RewriteRule ^manage/admin/submenu$ manage/admin/submenu.php
+RewriteRule ^manage/admin/submenu/add$ manage/admin/submenu_add.php
+RewriteRule ^manage/admin/submenu/edit/(.*)\/ manage/admin/submenu_edit.php?id=$1 [QSA]
+
+RewriteRule ^manage/admin/faq$ manage/admin/faq.php
+RewriteRule ^manage/admin/faq/add$ manage/admin/faq_add.php
+RewriteRule ^manage/admin/faq/edit/(.*)\/ manage/admin/faq_edit.php?id=$1 [QSA]
+
+RewriteRule ^manage/admin/member$ manage/admin/member.php
+RewriteRule ^manage/admin/member/add$ manage/admin/member_add.php
+RewriteRule ^manage/admin/member/edit/(.*)\/ manage/admin/member_edit.php?id=$1 [QSA]
+
+RewriteRule ^manage/admin/galeri$ manage/admin/galeri.php
+RewriteRule ^manage/admin/galeri/add$ manage/admin/galeri_add.php
+RewriteRule ^manage/admin/galeri/edit/(.*)\/ manage/admin/galeri_edit.php?id=$1 [QSA]
+
+RewriteRule ^manage/admin/berita$ manage/admin/berita.php
+RewriteRule ^manage/admin/berita/add$ manage/admin/berita_add.php
+RewriteRule ^manage/admin/berita/edit/(.*)\/ manage/admin/berita_edit.php?id=$1 [QSA]
+
+RewriteRule ^manage/admin/pages$ manage/admin/pages.php
+RewriteRule ^manage/admin/pages/add$ manage/admin/pages_add.php
+RewriteRule ^manage/admin/pages/edit/(.*)\/ manage/admin/pages_edit.php?id=$1 [QSA]
+
+#ROLE STAFF WEB
+RewriteRule ^manage/staff/dashboard$ manage/staff/index.php
+
+RewriteRule ^manage/staff/kategori$ manage/staff/kategori.php
+RewriteRule ^manage/staff/kategori/add$ manage/staff/kategori_add.php
+RewriteRule ^manage/staff/kategori/edit/(.*)\/ manage/staff/kategori_edit.php?id=$1 [QSA]
+
+RewriteRule ^manage/staff/galeri$ manage/staff/galeri.php
+RewriteRule ^manage/staff/galeri/add$ manage/staff/galeri_add.php
+RewriteRule ^manage/staff/galeri/edit/(.*)\/ manage/staff/galeri_edit.php?id=$1 [QSA]
+
+RewriteRule ^manage/staff/berita$ manage/staff/berita.php
+RewriteRule ^manage/staff/berita/add$ manage/staff/berita_add.php
+RewriteRule ^manage/staff/berita/edit/(.*)\/ manage/staff/berita_edit.php?id=$1 [QSA]
+
+RewriteRule ^manage/staff/member$ manage/staff/member.php
+RewriteRule ^manage/staff/member/add$ manage/staff/member_add.php
+RewriteRule ^manage/staff/member/edit/(.*)\/ manage/staff/member_edit.php?id=$1 [QSA]
+
+
+# FRONT WEB
+RewriteRule ^berita/(.*)\/ detail_berita.php?slug=$1 [QSA]
+RewriteRule ^page/(.*)\/ detail_page.php?slug_menu=$1 [QSA]
+RewriteRule ^kategori/(.*)\/ berita_kategori.php?slug_kategori=$1 [QSA]
